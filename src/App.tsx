@@ -1,10 +1,9 @@
-import Button from "./components/common/Button";
+import Form from "./components/common/Form";
 
 export default function App() {
   return (
     <div>
-      <Button type="submit">Sign in</Button>
-      <Button type="submit">Sign up</Button>
+      <Form />
     </div>
   );
 }
