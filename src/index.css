@@ -1,29 +1,53 @@
 @import "tailwindcss";
 
-/* My Base Styles */
+@font-face {
+    font-family: "Jakarta";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/PlusJakartaSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Jakarta";
+    font-style: normal;
+    font-weight: 600;
+    src: url("./assets/fonts/PlusJakartaSans-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DMSans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/DMSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DMSans";
+    font-style: normal;
+    font-weight: 600;
+    src: url("./assets/fonts/DMSans-SemiBold.ttf") format("truetype");
+}
+
+@theme {
+
+    --font-desktop: "Jakarta", sans-serif;
+    --font-mobile: "DMSans", sans-serif;
+
+    --color-primary-100: #5D87FF;
+    --color-black-100: #2A3547;
+    --color-black-60: #2A354799;
+    --color-black-20: #2A354733;
+    --color-black-10: #2A35471A;
+    --color-white-100: #FFFFFF;
+}
 
 @layer base {
-    /* h1 {
-        @apply text-2xl font-bold;
-    }
-
-    h2 {
-        @apply text-xl font-semibold;
+    html {
+        @apply scroll-smooth;
     }
 
     body {
-        @apply font-sans antialiased;
-    } */
-}
-
-/* Custom Styles */
-
-@layer components {
-    /* .container-custom {
-        @apply max-w-7xl mx-auto px-4;
+        @apply font-mobile md:font-desktop min-h-screen flex flex-col items-center justify-center text-base antialiased text-black-100;
+        line-height: 1.4
     }
-
-    .btn-primary {
-        @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition;
-    } */
 }
