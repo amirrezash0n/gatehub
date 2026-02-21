@@ -39,6 +39,8 @@
     --color-black-20: #2A354733;
     --color-black-10: #2A35471A;
     --color-white-100: #FFFFFF;
+
+    --spacing-168: 168px;
 }
 
 @layer base {
