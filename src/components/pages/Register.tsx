@@ -1,10 +1,11 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link } from "react-router-dom";
 import {
   registerSchema,
   type RegisterFormData,
 } from "../../lib/validators/auth.validator";
+import FormLogo from "../common/FormLogo";
+import Button from "../common/Button";
 
 export default function Register() {
   const {
@@ -19,7 +20,6 @@ export default function Register() {
   const onSubmit = async (data: RegisterFormData) => {
     try {
       console.log("Form data:", data);
-      // شبیه‌سازی ثبت‌نام
       await new Promise((resolve) => setTimeout(resolve, 1000));
       alert("ثبت‌نام موفقیت‌آمیز!");
     } catch (error) {
@@ -28,23 +28,56 @@ export default function Register() {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto p-6 bg-white-100 rounded-xl shadow-lg">
-      <h2 className="text-2xl font-semibold text-center text-black-100 mb-6">
-        ثبت‌نام در GateHub
-      </h2>
+    <div className="w-full max-w-md mx-auto p-6 bg-white-100 rounded-xl">
+      <FormLogo />
+      {/* Social Buttons */}
+      <div className="flex gap-x-6">
+        <Button type="social">
+          <img src="images/socials/google.png" alt="google" />
+          <span>Google</span>
+        </Button>
+
+        <Button type="social">
+          <img src="images/socials/facebook.png" alt="facebook" />
+          <span>Facebook</span>
+        </Button>
+      </div>
+
+      <div className="relative flex items-center justify-center text-sm text-black-60 my-6">
+        <span className="relative px-4 bg-white-100 z-10">or sign in with</span>
+        <div className="absolute left-0 right-0 h-px bg-black-10"></div>
+      </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        {/* فیلد ایمیل */}
+        {/* Username */}
         <div>
-          <label className="block text-sm font-medium text-black-60 mb-1">
-            ایمیل
+          <label className="block text-sm font-semibold text-black-100 mb-2">
+            Username
+          </label>
+          <input
+            type="text"
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-100 ${
+              errors.username ? "border-red-500" : "border-black-20"
+            }`}
+            {...register("username")}
+          />
+          {errors.username && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.username.message}
+            </p>
+          )}
+        </div>
+
+        {/* Email */}
+        <div>
+          <label className="block text-sm font-semibold text-black-100 mb-2">
+            Email
           </label>
           <input
             type="email"
             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-100 ${
               errors.email ? "border-red-500" : "border-black-20"
             }`}
-            placeholder="example@email.com"
             {...register("email")}
           />
           {errors.email && (
@@ -52,17 +85,16 @@ export default function Register() {
           )}
         </div>
 
-        {/* فیلد رمز عبور */}
+        {/* Password */}
         <div>
-          <label className="block text-sm font-medium text-black-60 mb-1">
-            رمز عبور
+          <label className="block text-sm font-semibold text-black-100 mb-2">
+            Password
           </label>
           <input
             type="password"
             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-100 ${
               errors.password ? "border-red-500" : "border-black-20"
             }`}
-            placeholder="••••••••"
             {...register("password")}
           />
           {errors.password && (
@@ -72,21 +104,17 @@ export default function Register() {
           )}
         </div>
 
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full bg-primary-100 text-white-100 py-2 px-4 rounded-lg hover:bg-primary-100/90 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {isSubmitting ? "در حال ثبت‌نام..." : "ثبت‌نام"}
-        </button>
+        <Button disabled={isSubmitting} className="mt-2" type="submit">
+          {isSubmitting ? "Signing up..." : "Sign up"}
+        </Button>
       </form>
 
-      <p className="text-center mt-4 text-black-60">
-        قبلاً ثبت‌نام کرده‌اید؟{" "}
-        <Link to="/login" className="text-primary-100 hover:underline">
-          ورود
-        </Link>
-      </p>
+      <div className="flex items-center justify-center gap-x-2 text-sm text-center mt-6 cursor-pointer">
+        <p className="text-black-100">Already have an Account?</p>
+        <a href="#" className="text-primary-100 font-semibold">
+          Sign In
+        </a>
+      </div>
     </div>
   );
 }
