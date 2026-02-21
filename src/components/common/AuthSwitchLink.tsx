@@ -1,18 +1,18 @@
 interface AuthSwitchLinkTypes {
-  text: string;
+  prompt: string;
   textLink: string;
-  link: string;
+  linkTo: string;
 }
 
 export default function AuthSwitchLink({
-  text,
+  prompt,
   textLink,
-  link,
+  linkTo,
 }: AuthSwitchLinkTypes) {
   return (
     <div className="flex items-center justify-center gap-x-2 text-sm text-center mt-6 cursor-pointer">
-      <p className="text-black-100">{text}</p>
-      <a href={link} className="text-primary-100 font-semibold">
+      <p className="text-black-100">{prompt}</p>
+      <a href={linkTo} className="text-primary-100 font-semibold">
         {textLink}
       </a>
     </div>
