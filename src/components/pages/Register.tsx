@@ -21,7 +21,7 @@ export default function Register() {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto p-6 bg-white-100 rounded-xl">
+    <div className="w-full max-w-md mx-auto p-4 sm:p-5 md:p-6 bg-white-100 rounded-xl">
       {/* Form Logo Component */}
       <FormLogo />
       {/* Social Buttons Component*/}
