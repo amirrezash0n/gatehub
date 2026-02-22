@@ -15,7 +15,7 @@ const socialButtonStyles =
   "w-168 h-10 flex gap-2 justify-center items-center py-2 border border-black-20 bg-white-100";
 
 const submitButtonStyles =
-  "w-full bg-primary-100 text-sm md:text-base text-white py-2 h-9 shadow-md";
+  "w-full bg-primary-100 text-sm md:text-base text-white py-2 mt-1 md:mt-2 h-9 shadow-md";
 
 export default function Button({
   children,

@@ -62,7 +62,7 @@ export default function AuthForm({
         );
       })}
 
-      <Button disabled={isSubmitting} className="mt-1 md:mt-2" type="submit">
+      <Button disabled={isSubmitting} type="submit">
         {isSubmitting ? loadingText : buttonText}
       </Button>
     </form>
