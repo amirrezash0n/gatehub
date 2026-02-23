@@ -40,7 +40,7 @@ export default function Login() {
       <AuthSwitchLink
         prompt="New to TailwindAdmin?"
         textLink="Create an account"
-        linkTo="#signUp"
+        linkTo="/signup"
       />
     </div>
   );

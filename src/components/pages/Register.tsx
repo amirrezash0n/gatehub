@@ -40,7 +40,7 @@ export default function Register() {
       <AuthSwitchLink
         prompt="Already have an Account?"
         textLink="Sign In"
-        linkTo="#signIn"
+        linkTo="/login"
       />
     </div>
   );

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface AuthSwitchLinkTypes {
   prompt: string;
   textLink: string;
@@ -12,9 +14,12 @@ export default function AuthSwitchLink({
   return (
     <div className="flex items-center justify-center gap-x-2 text-sm text-center mt-6 cursor-pointer">
       <p className="text-black-100">{prompt}</p>
-      <a href={linkTo} className="text-primary-100 font-semibold">
+      <Link
+        to={linkTo}
+        className="text-primary-100 font-semibold hover:underline transition-all"
+      >
         {textLink}
-      </a>
+      </Link>
     </div>
   );
 }
