@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 interface ButtonTypes {
   children: ReactNode;
   className?: string;
-  type: "submit" | "social";
+  type?: "submit" | "social";
   disabled?: boolean;
   onClick?: () => void;
 }

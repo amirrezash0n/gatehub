@@ -48,9 +48,8 @@ export default function AuthForm({
             </label>
             <input
               type={field.type}
-              className={`w-full px-3 md:px-4 py-1.5 md:py-2 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-100 ${
-                error ? "border-red-500" : "border-black-20"
-              }`}
+              className={`w-full px-3 md:px-4 py-1.5 md:py-2 text-sm border rounded-sm focus:outline-none focus:ring-2 focus:ring-primary-100 
+                ${error ? "border-red-500" : "border-black-10"}`}
               {...register(field.name)}
             />
             {error && (

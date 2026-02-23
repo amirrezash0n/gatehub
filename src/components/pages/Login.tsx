@@ -1,6 +1,6 @@
 import {
   loginSchema,
-  type RegisterFormData,
+  type LoginFormData,
 } from "../../lib/validators/auth.validator";
 import FormLogo from "../common/FormLogo";
 import Separator from "../common/Separator";
@@ -8,13 +8,16 @@ import SocialButtons from "../common/SocialButtons";
 import AuthSwitchLink from "../common/AuthSwitchLink";
 import AuthForm from "../common/AuthForm";
 import { loginFields } from "../../lib/auth/formConfig";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const onSubmit = async (data: RegisterFormData) => {
+  const navigate = useNavigate();
+  const onSubmit = async (data: LoginFormData) => {
     try {
       console.log("Form data:", data);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       alert("ورود موفقیت‌آمیز!");
+      navigate("/dashboard");
     } catch (error) {
       console.error("خطا:", error);
     }
