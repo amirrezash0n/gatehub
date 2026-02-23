@@ -9,16 +9,25 @@ import AuthSwitchLink from "../common/AuthSwitchLink";
 import AuthForm from "../common/AuthForm";
 import { loginFields } from "../../lib/auth/formConfig";
 import { useNavigate } from "react-router-dom";
+import { useSweetAlert } from "../../hooks/useSweetAlert";
 
 export default function Login() {
   const navigate = useNavigate();
+  const { showSuccess, showError } = useSweetAlert();
   const onSubmit = async (data: LoginFormData) => {
     try {
       console.log("Form data:", data);
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      alert("ورود موفقیت‌آمیز!");
+      await showSuccess({
+        title: "Welcome Back!",
+        message: "You have successfully logged in!",
+      });
       navigate("/dashboard");
     } catch (error) {
+      await showError({
+        title: "Error",
+        message: "Invalid email. Please try again.",
+      });
       console.error("خطا:", error);
     }
   };
