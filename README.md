@@ -2,8 +2,6 @@
   
   # 🔐 GateHub - Authentication System
 
-![GateHub Banner](/images/readme/banner.png)
-
 [![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.1.18-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
@@ -11,7 +9,7 @@
 
 ### 🚪 A modern authentication system built with React + TypeScript and Supabase
 
-[Live Demo](https://amirrezash0n.github.io/gatehub) • [GitHub](https://github.com/amirrezash0n/gatehub)
+[Live Demo](https://amirrezash0n.github.io/gatehub)
 
 </div>
 
@@ -49,7 +47,7 @@
   
   ### **Login Page**
   
-  ![Login Page](/images/readme/login.png)
+  ![Login Page](/public/images/readme/login.png)
   
   *Clean login interface with email and password*
   
@@ -57,7 +55,7 @@
   
   ### **Registration Page**
   
-  ![Register Page](/images/readme/register.png)
+  ![Register Page](/public/images/readme/register.png)
   
   *Registration form with username, email and password*
 
@@ -125,4 +123,3 @@ This project is part of the ByteRivals competition.
 <div align="center">
   Made with ❤️ for ByteRivals Competition
 </div>
-```
