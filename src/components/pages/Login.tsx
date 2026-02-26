@@ -14,19 +14,15 @@ import { useAuth } from "../../hooks/useAuth";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { showSuccess, showError, showLoading, closeLoading } = useSweetAlert();
+  const { showSuccess, showError } = useSweetAlert();
   const { signIn } = useAuth();
 
   const onSubmit = async (data: LoginFormData) => {
     try {
-      showLoading("Signing you in...");
-
       const result = await signIn({
         email: data.email,
         password: data.password,
       });
-
-      closeLoading();
 
       if (result.success) {
         await showSuccess({
@@ -45,7 +41,6 @@ export default function Login() {
         });
       }
     } catch (error) {
-      closeLoading();
       await showError({
         title: "Error",
         message: "Something went wrong. Please try again.",

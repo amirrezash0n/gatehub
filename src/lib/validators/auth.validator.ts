@@ -28,18 +28,15 @@ export const registerSchema = z.object({
 });
 
 export const loginSchema = z.object({
-  username: z
-    .string()
-    .min(1, { message: "Username is required" })
-    .min(4, { message: "Username must be at least 4 characters" })
-    .max(20, { message: "Username must be less than 20 characters" })
-    .regex(/^[a-zA-Z0-9_]+$/, {
-      message: "Username can only contain letters, numbers, and underscores",
-    }),
   email: z
     .string()
     .min(1, { message: "Email is required" })
     .email({ message: "Please enter a valid email address" }),
+  password: z
+    .string()
+    .min(1, { message: "Password is required" })
+    .min(8, { message: "Password must be at least 8 characters" })
+    .max(20, { message: "Password must be less than 20 characters" }),
 });
 
 export type RegisterFormData = z.infer<typeof registerSchema>;
