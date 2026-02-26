@@ -9,7 +9,7 @@ export default function FormLogo() {
 
   return (
     <Link to={nextPage} className="block mb-6" title={`Go to ${nextPageText}`}>
-      <img src="/logo.png" alt="GateHub" className="h-12 w-auto mx-auto" />
+      <img src="logo.png" alt="GateHub" className="h-12 w-auto mx-auto" />
     </Link>
   );
 }
